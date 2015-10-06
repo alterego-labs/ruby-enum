@@ -76,6 +76,12 @@ end
 # => [ [:GREEN, #<Colors:...>], [:RED, #<Colors:...>] ]
 ```
 
+#### Checking value includence
+```ruby
+Colors.include?('red')   # => true
+Colors.include?('black') # => false
+```
+
 ## Contributing
 
 You're encouraged to contribute to this gem.
