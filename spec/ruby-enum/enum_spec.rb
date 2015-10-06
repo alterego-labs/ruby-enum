@@ -69,4 +69,17 @@ describe Ruby::Enum do
       Colors.to_h.should == { RED: 'red', GREEN: 'green' }
     end
   end
+  context '#include?' do
+    context 'when passed value exists in enum' do
+      it 'should be truthy' do
+        Colors.include?('red').should be_truthy
+      end
+    end
+
+    context 'when passed value does not exists in enum' do
+      it 'should be falsey' do
+        Colors.include?('black').should be_falsey
+      end
+    end
+  end
 end

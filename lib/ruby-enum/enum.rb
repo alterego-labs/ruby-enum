@@ -61,6 +61,14 @@ module Ruby
         @_enum_hash.values.map(&:value)
       end
 
+      #
+      # Checks if specified value exists in this enum
+      #
+      def include?(value)
+        return false if @_enum_hash.empty?
+        @_enum_hash.values.any? { |enum| enum.value == value }
+      end
+
       def to_h
         Hash[@_enum_hash.map do |key, enum|
           [key, enum.value]
